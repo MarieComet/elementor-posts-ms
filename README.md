@@ -1,4 +1,4 @@
-# Elementor Skins Posts Mulsitie
+# Elementor Skins Posts Multisite
 
 Add new skins to Elementor Posts widget to query multisite posts.
 New control added in "Query" widget section.
