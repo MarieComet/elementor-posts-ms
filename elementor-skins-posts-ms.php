@@ -1,18 +1,18 @@
 <?php
 /**
- * Plugin Name: Elementor Hello World
+ * Plugin Name: Elementor Multisite Query
  * Description: Elementor sample plugin.
  * Plugin URI:  https://elementor.com/
  * Version:     1.2.0
  * Author:      Author Name
  * Author URI:  https://elementor.com/
- * Text Domain: elementor-hello-world
+ * Text Domain: elementor-skins-posts-ms
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Main Elementor Hello World Class
+ * Main Elementor Multisite Query Class
  *
  * The init class that runs the Hello World plugin.
  * Intended To make sure that the plugin's minimum requirements are met.
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Any custom code should go inside Plugin Class in the plugin.php file.
  * @since 1.2.0
  */
-final class Elementor_Hello_World {
+final class Elementor_Skins_Posts_MS {
 
 	/**
 	 * Plugin Version
@@ -73,7 +73,7 @@ final class Elementor_Hello_World {
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'elementor-hello-world' );
+		load_plugin_textdomain( 'elementor-skins-posts-ms' );
 	}
 
 	/**
@@ -127,9 +127,9 @@ final class Elementor_Hello_World {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-hello-world' ),
-			'<strong>' . esc_html__( 'Elementor Hello World', 'elementor-hello-world' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'elementor-hello-world' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-skins-posts-ms' ),
+			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-skins-posts-ms' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'elementor-skins-posts-ms' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -150,9 +150,9 @@ final class Elementor_Hello_World {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-hello-world' ),
-			'<strong>' . esc_html__( 'Elementor Hello World', 'elementor-hello-world' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'elementor-hello-world' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-skins-posts-ms' ),
+			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-skins-posts-ms' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'elementor-skins-posts-ms' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -174,9 +174,9 @@ final class Elementor_Hello_World {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-hello-world' ),
-			'<strong>' . esc_html__( 'Elementor Hello World', 'elementor-hello-world' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'elementor-hello-world' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-skins-posts-ms' ),
+			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-skins-posts-ms' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'elementor-skins-posts-ms' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 
@@ -184,5 +184,5 @@ final class Elementor_Hello_World {
 	}
 }
 
-// Instantiate Elementor_Hello_World.
-new Elementor_Hello_World();
+// Instantiate Elementor_MS_Query.
+new Elementor_Skins_Posts_MS();

@@ -1,5 +1,5 @@
 <?php
-namespace ElementorHelloWorld;
+namespace Elementor_Skins_Posts_MS;
 
 /**
  * Class Plugin
@@ -46,20 +46,21 @@ class Plugin {
 	 * @access public
 	 */
 	public function widget_scripts() {
-		wp_register_script( 'elementor-hello-world', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+		wp_register_script( 'elementor-skins-posts-ms', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
 	}
 
 	/**
-	 * Include Widgets files
+	 * Include Widgets skins
 	 *
-	 * Load widgets files
+	 * Load Widgets skins
 	 *
 	 * @since 1.2.0
 	 * @access private
 	 */
-	private function include_widgets_files() {
-		require_once( __DIR__ . '/widgets/hello-world.php' );
-		require_once( __DIR__ . '/widgets/inline-editing.php' );
+	private function include_skins_files() {
+	    require_once( __DIR__ . '/skins/posts/skin-base-ms.php' );
+	    require_once( __DIR__ . '/skins/posts/skin-cards-ms.php' );
+	    require_once( __DIR__ . '/skins/posts/skin-classic-ms.php' );
 	}
 
 	/**
@@ -72,11 +73,13 @@ class Plugin {
 	 */
 	public function register_widgets() {
 		// Its is now safe to include Widgets files
-		$this->include_widgets_files();
-
-		// Register Widgets
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Hello_World() );
-		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Inline_Editing() );
+		$this->include_skins_files();
+		// Register skin
+		add_action( 'elementor/widget/posts/skins_init', function( $widget ) {
+			//$widget->add_skin( new Posts\Skin_Base_MS($widget) );
+			$widget->add_skin( new Posts\Skin_Cards_MS($widget) );
+			$widget->add_skin( new Posts\Skin_Classic_MS($widget) );
+		} );
 	}
 
 	/**
@@ -90,7 +93,7 @@ class Plugin {
 	public function __construct() {
 
 		// Register widget scripts
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
+		//add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
 
 		// Register widgets
 		add_action( 'elementor/widgets/widgets_registered', [ $this, 'register_widgets' ] );
