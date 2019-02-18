@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Elementor Multisite Query
- * Description: Elementor sample plugin.
+ * Plugin Name: Elementor Multisite Query for Posts and Portfolio widgets
+ * Description: This plugin add new control to Posts and Portfolio widget for select sites in a Multisite WordPress network
  * Plugin URI:  https://elementor.com/
- * Version:     1.2.0
- * Author:      Author Name
- * Author URI:  https://elementor.com/
- * Text Domain: elementor-skins-posts-ms
+ * Version:     0.0.1
+ * Author:      Marie Comet
+ * Author URI:  https://mariecomet.fr/
+ * Text Domain: elementor-posts-ms
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -20,22 +20,22 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * You should only modify the constants to match your plugin's needs.
  *
  * Any custom code should go inside Plugin Class in the plugin.php file.
- * @since 1.2.0
+ * @since 0.0.1
  */
-final class Elementor_Skins_Posts_MS {
+final class Elementor_Posts_MS {
 
 	/**
 	 * Plugin Version
 	 *
-	 * @since 1.2.0
+	 * @since 0.0.1
 	 * @var string The plugin version.
 	 */
-	const VERSION = '1.2.0';
+	const VERSION = '0.0.1';
 
 	/**
 	 * Minimum Elementor Version
 	 *
-	 * @since 1.2.0
+	 * @since 0.0.1
 	 * @var string Minimum Elementor version required to run the plugin.
 	 */
 	const MINIMUM_ELEMENTOR_VERSION = '2.0.0';
@@ -43,7 +43,7 @@ final class Elementor_Skins_Posts_MS {
 	/**
 	 * Minimum PHP Version
 	 *
-	 * @since 1.2.0
+	 * @since 0.0.1
 	 * @var string Minimum PHP version required to run the plugin.
 	 */
 	const MINIMUM_PHP_VERSION = '7.0';
@@ -69,11 +69,11 @@ final class Elementor_Skins_Posts_MS {
 	 * Load plugin localization files.
 	 * Fired by `init` action hook.
 	 *
-	 * @since 1.2.0
+	 * @since 0.0.1
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'elementor-skins-posts-ms' );
+		load_plugin_textdomain( 'elementor-posts-ms' );
 	}
 
 	/**
@@ -85,7 +85,7 @@ final class Elementor_Skins_Posts_MS {
 	 *
 	 * Fired by `plugins_loaded` action hook.
 	 *
-	 * @since 1.2.0
+	 * @since 0.0.1
 	 * @access public
 	 */
 	public function init() {
@@ -127,9 +127,9 @@ final class Elementor_Skins_Posts_MS {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-skins-posts-ms' ),
-			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-skins-posts-ms' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'elementor-skins-posts-ms' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'elementor-posts-ms' ),
+			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-posts-ms' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'elementor-posts-ms' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -150,9 +150,9 @@ final class Elementor_Skins_Posts_MS {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-skins-posts-ms' ),
-			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-skins-posts-ms' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'elementor-skins-posts-ms' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-posts-ms' ),
+			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-posts-ms' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'elementor-posts-ms' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -174,9 +174,9 @@ final class Elementor_Skins_Posts_MS {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-skins-posts-ms' ),
-			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-skins-posts-ms' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'elementor-skins-posts-ms' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'elementor-posts-ms' ),
+			'<strong>' . esc_html__( 'Elementor Multisite Query', 'elementor-posts-ms' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'elementor-posts-ms' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 
@@ -185,4 +185,4 @@ final class Elementor_Skins_Posts_MS {
 }
 
 // Instantiate Elementor_MS_Query.
-new Elementor_Skins_Posts_MS();
+new Elementor_Posts_MS();

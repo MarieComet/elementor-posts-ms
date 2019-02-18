@@ -1,32 +1,18 @@
-# Elementor Skins Posts Multisite
+# Elementor Multisite Query for Posts and Portfolio widgets
 
-Add new skins to Elementor Posts widget to query multisite posts.
-New control added in "Query" widget section.
+This plugin add new control to Posts and Portfolio widget for select sites in a Multisite WordPress network
 
-Plugin Structure: 
-```
-assets/
-      /js   
-      /css  Holds plugin CSS Files
-      
-widgets/
-      /hello-world.php
-      /inline-editing.php
-      
-index.php
-elementor-skins-posts-ms.php
-plugin.php
-```
+In Posts and Portfolio widgets, at the top of the "Query" section, select one or more sites.
+At the bottom of the "Query" section, add "multisite" to the "Query ID" control.
 
+This plugin use [WordPress Query Multisite](https://github.com/miguelpeixe/WP_Query_Multisite).
 
-* `assets` directory - holds plugin JavaScript and CSS assets
-  * `/js` directory - Holds plugin Javascript Files
-  * `/css` directory - Holds plugin CSS Files
-* `widgets` directory - Holds Plugin widgets
-  * `/hello-world.php` - Hello World demo Widget class
-  * `/inline-editing.php` - Inline Editing demo Widget class
-* `index.php`	- Prevent direct access to directories
-* `elementor-skins-posts-ms.php`	- Main plugin file, used as a loader if plugin minimum requirements are met.
-* `plugin.php` - The actual Plugin file/Class.
+Please note that for the moment these controls are not refreshed when selecting a site :
+- Author
+- Categories
+- Tags
+- Format
+
+However "Advanced" controls works.
 
 For more documentation please see [Elementor Developers Resource](https://developers.elementor.com/creating-an-extension-for-elementor/).
