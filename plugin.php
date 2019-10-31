@@ -117,8 +117,7 @@ class Plugin {
 
 		add_action( 'elementor/element/portfolio/section_query/after_section_start', [ $this, 'posts_register_additional_ms_query_control' ], 10, 2 );
 
-		add_action( 'elementor_pro/posts/query/multisite', [ $this, 'add_ms_query'], 10, 2 );
-		add_action( 'elementor_pro/portfolio/query/multisite', [ $this, 'add_ms_query'], 10, 2 );
+		add_action( 'elementor/query/multisite', [ $this, 'add_ms_query'], 10, 2 );
 
 	}
 }
